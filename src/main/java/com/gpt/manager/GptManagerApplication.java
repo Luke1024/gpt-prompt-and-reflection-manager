@@ -1,13 +1,13 @@
-package com.gptmanager.gpt;
+package com.gpt.manager;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class GptApplication {
+public class GptManagerApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(GptApplication.class, args);
+		SpringApplication.run(GptManagerApplication.class, args);
 	}
 
 }
