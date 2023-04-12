@@ -1,11 +1,10 @@
 package com.gpt.manager.services;
 
-import com.gpt.manager.model.RequestDto;
-import com.gpt.manager.model.ResponseDto;
+import com.gpt.manager.model.dto.RequestDto;
+import com.gpt.manager.model.dto.ResponseDto;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Service;

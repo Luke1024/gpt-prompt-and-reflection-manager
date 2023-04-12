@@ -1,10 +1,10 @@
-package com.gpt.manager.model;
+package com.gpt.manager.model.dto;
 
 import java.util.List;
 
 public class RequestDto {
     private String model;
-    private List<Message> messages;
+    private List<MessageDto> messageDtos;
     private Double temperature;
     private Double top_p;
     private Integer n;
@@ -15,9 +15,9 @@ public class RequestDto {
     public RequestDto() {
     }
 
-    public RequestDto(String model, List<Message> messages, Double temperature, Double top_p, Integer n, Integer max_tokens, Double presence_penalty, Double frequency_penalty) {
+    public RequestDto(String model, List<MessageDto> messageDtos, Double temperature, Double top_p, Integer n, Integer max_tokens, Double presence_penalty, Double frequency_penalty) {
         this.model = model;
-        this.messages = messages;
+        this.messageDtos = messageDtos;
         this.temperature = temperature;
         this.top_p = top_p;
         this.n = n;
@@ -30,8 +30,8 @@ public class RequestDto {
         return model;
     }
 
-    public List<Message> getMessages() {
-        return messages;
+    public List<MessageDto> getMessages() {
+        return messageDtos;
     }
 
     public Double getTemperature() {

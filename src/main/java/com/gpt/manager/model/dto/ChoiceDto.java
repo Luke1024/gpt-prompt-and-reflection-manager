@@ -1,16 +1,16 @@
-package com.gpt.manager.model;
+package com.gpt.manager.model.dto;
 
-public class Choice {
+public class ChoiceDto {
     private int index;
-    private Message message;
+    private MessageDto messageDto;
     private String finish_reason;
 
-    public Choice() {
+    public ChoiceDto() {
     }
 
-    public Choice(int index, Message message, String finish_reason) {
+    public ChoiceDto(int index, MessageDto messageDto, String finish_reason) {
         this.index = index;
-        this.message = message;
+        this.messageDto = messageDto;
         this.finish_reason = finish_reason;
     }
 
@@ -18,8 +18,8 @@ public class Choice {
         return index;
     }
 
-    public Message getMessage() {
-        return message;
+    public MessageDto getMessage() {
+        return messageDto;
     }
 
     public String getFinish_reason() {
@@ -30,7 +30,7 @@ public class Choice {
     public String toString() {
         return "Choice{" +
                 "index=" + index +
-                ", message=" + message +
+                ", message=" + messageDto +
                 ", finish_reason='" + finish_reason + '\'' +
                 '}';
     }

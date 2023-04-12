@@ -1,14 +1,14 @@
-package com.gpt.manager.model;
+package com.gpt.manager.model.dto;
 
-public class Usage {
+public class UsageDto {
     private int promp_tokens;
     private int completion_tokens;
     private int total_tokens;
 
-    public Usage() {
+    public UsageDto() {
     }
 
-    public Usage(int promp_tokens, int completion_tokens, int total_tokens) {
+    public UsageDto(int promp_tokens, int completion_tokens, int total_tokens) {
         this.promp_tokens = promp_tokens;
         this.completion_tokens = completion_tokens;
         this.total_tokens = total_tokens;
