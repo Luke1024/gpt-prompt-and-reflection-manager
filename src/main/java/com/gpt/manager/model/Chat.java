@@ -4,6 +4,7 @@ package com.gpt.manager.model;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -19,10 +20,10 @@ public class Chat {
     @OneToOne(cascade = CascadeType.ALL)
     private ChatSettings chatSettings;
 
-    public Chat(String chatName, List<Message> messages, ChatSettings chatSettings) {
+    public Chat(String chatName, ChatSettings chatSettings) {
         this.chatName = chatName;
         this.created = LocalDateTime.now();
-        this.messages = messages;
+        this.messages = new ArrayList<>();
         this.chatSettings = chatSettings;
     }
 

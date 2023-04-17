@@ -10,6 +10,8 @@ public class ChatSettings {
     @Id
     @GeneratedValue
     private long id;
+
+    private String model;
     private Double temperature;
     private Double top_p;
     private Integer n;
@@ -17,7 +19,7 @@ public class ChatSettings {
     private Double presence_penalty;
     private Double frequency_penalty;
 
-    public ChatSettings(Double temperature, Double top_p, Integer n, Integer max_tokens,
+    public ChatSettings(String model, Double temperature, Double top_p, Integer n, Integer max_tokens,
                         Double presence_penalty, Double frequency_penalty) {
         this.temperature = temperature;
         this.top_p = top_p;
@@ -29,6 +31,10 @@ public class ChatSettings {
 
     public long getId() {
         return id;
+    }
+
+    public String getModel() {
+        return model;
     }
 
     public Double getTemperature() {

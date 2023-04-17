@@ -12,26 +12,24 @@ public class Message {
     private long id;
     private LocalDateTime created;
     private String content;
+    private String role;
     private boolean visible;
     private boolean send;
-    private boolean byUser;
     private boolean error;
     @ManyToOne
     @JoinColumn(name="CHAT_ID")
     private Chat chat;
 
-    public Message(String content, boolean visible, boolean send, boolean byUser, Chat chat) {
-        this.created = LocalDateTime.now();
+    public Message(long id, LocalDateTime created, String content, String role, boolean visible, boolean send,
+                   boolean error, Chat chat) {
+        this.id = id;
+        this.created = created;
         this.content = content;
+        this.role = role;
         this.visible = visible;
         this.send = send;
-        this.byUser = byUser;
-        this.error = false;
+        this.error = error;
         this.chat = chat;
-    }
-
-    public boolean isError() {
-        return error;
     }
 
     public long getId() {
@@ -46,6 +44,10 @@ public class Message {
         return content;
     }
 
+    public String getRole() {
+        return role;
+    }
+
     public boolean isVisible() {
         return visible;
     }
@@ -54,19 +56,11 @@ public class Message {
         return send;
     }
 
-    public boolean isByUser() {
-        return byUser;
+    public boolean isError() {
+        return error;
     }
 
     public Chat getChat() {
         return chat;
-    }
-
-    public void setChat(Chat chat) {
-        this.chat = chat;
-    }
-
-    public void setError(boolean error) {
-        this.error = error;
     }
 }
