@@ -1,4 +1,4 @@
-package com.gpt.manager.model.dto;
+package com.gpt.manager.model.dto.api;
 
 public class UsageDto {
     private int promp_tokens;

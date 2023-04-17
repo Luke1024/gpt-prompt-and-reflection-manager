@@ -1,10 +1,15 @@
-package com.gpt.manager.model.dto;
+package com.gpt.manager.model;
 
-import java.util.List;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 
-public class RequestDto {
-    private String model;
-    private List<MessageDto> messageDtos;
+@Entity
+public class ChatSettings {
+
+    @Id
+    @GeneratedValue
+    private long id;
     private Double temperature;
     private Double top_p;
     private Integer n;
@@ -12,12 +17,8 @@ public class RequestDto {
     private Double presence_penalty;
     private Double frequency_penalty;
 
-    public RequestDto() {
-    }
-
-    public RequestDto(String model, List<MessageDto> messageDtos, Double temperature, Double top_p, Integer n, Integer max_tokens, Double presence_penalty, Double frequency_penalty) {
-        this.model = model;
-        this.messageDtos = messageDtos;
+    public ChatSettings(Double temperature, Double top_p, Integer n, Integer max_tokens,
+                        Double presence_penalty, Double frequency_penalty) {
         this.temperature = temperature;
         this.top_p = top_p;
         this.n = n;
@@ -26,12 +27,8 @@ public class RequestDto {
         this.frequency_penalty = frequency_penalty;
     }
 
-    public String getModel() {
-        return model;
-    }
-
-    public List<MessageDto> getMessages() {
-        return messageDtos;
+    public long getId() {
+        return id;
     }
 
     public Double getTemperature() {

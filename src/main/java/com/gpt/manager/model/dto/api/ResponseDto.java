@@ -1,4 +1,4 @@
-package com.gpt.manager.model.dto;
+package com.gpt.manager.model.dto.api;
 
 import java.util.List;
 

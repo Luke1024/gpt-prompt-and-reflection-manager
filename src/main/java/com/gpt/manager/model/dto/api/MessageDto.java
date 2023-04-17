@@ -1,4 +1,4 @@
-package com.gpt.manager.model.dto;
+package com.gpt.manager.model.dto.api;
 
 public class MessageDto {
     private String role;

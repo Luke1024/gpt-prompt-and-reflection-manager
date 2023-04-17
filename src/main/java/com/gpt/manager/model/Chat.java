@@ -11,19 +11,27 @@ public class Chat {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
+    private String chatName;
     private LocalDateTime created;
     @OneToMany(targetEntity = Message.class, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @OrderColumn
     private List<Message> messages;
+    @OneToOne(cascade = CascadeType.ALL)
+    private ChatSettings chatSettings;
 
-    public Chat(long id, LocalDateTime created, List<Message> messages) {
-        this.id = id;
-        this.created = created;
+    public Chat(String chatName, List<Message> messages, ChatSettings chatSettings) {
+        this.chatName = chatName;
+        this.created = LocalDateTime.now();
         this.messages = messages;
+        this.chatSettings = chatSettings;
     }
 
     public long getId() {
         return id;
+    }
+
+    public String getChatName() {
+        return chatName;
     }
 
     public LocalDateTime getCreated() {
@@ -32,5 +40,9 @@ public class Chat {
 
     public List<Message> getMessages() {
         return messages;
+    }
+
+    public ChatSettings getChatSettings() {
+        return chatSettings;
     }
 }

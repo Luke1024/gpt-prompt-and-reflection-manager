@@ -1,8 +1,8 @@
 package com.gpt.manager.services;
 
-import com.gpt.manager.model.dto.MessageDto;
-import com.gpt.manager.model.dto.RequestDto;
-import com.gpt.manager.model.dto.ResponseDto;
+import com.gpt.manager.model.dto.api.MessageDto;
+import com.gpt.manager.model.dto.api.RequestDto;
+import com.gpt.manager.model.dto.api.ResponseDto;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
